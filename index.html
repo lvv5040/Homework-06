@@ -7,26 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
 
-<!-- Bootleg -->
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<!-- my css -->
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="script.js"></script>
+
 
 </head>
 
 <body>
-    <!-- Top Header -->
-    <nav class="navbar navbar-dark bg-dark" style ="margin-bottom: 1%;">
-        <span class="navbar-brand mb-0 h1">A Weather Dashboard for Every City!</span>
+   
+    <nav class="navbar" style ="margin-bottom: 1%;">
     </nav>
+
+    <div id="bg">
+        <img src="images/background.jpg" alt="">
+      </div>
 
     <div class="container">
     <div class="row" style = "margin-bottom:1%;">
-    <div class="col-md-8">
-        <!-- todays weather -->
+    <div class="col-md-12">
+      
         <div class="jumbotron" style="text-align: center;">
 
-          <h1><span id ="location" ></span></h1>
           <h1><span class ="date" ></span></h1>
           <input id= "input">
 
@@ -34,46 +42,41 @@
             <button class=" btn-success btn-md"  id = "submitBtn" role="button">Submit</button>
 
             <p class="lead">Use this weather app to find the weather for anywhere you would like to go or see what it is currently like</p>
+            <p2>Simply enter the city or zip code of the location you desire to view</p2>
             <hr class="my-4">
             <h1></h1>
             <p >Temperature: <span class = "temperature" ></span></p>
-            <p>Humidity: <span class = "humidity"></span></p>
-            <p>Wind Speed:<span id = "wind"></span></p>
-            <p>UV index:<span id = "uv"></span></p>
+            <p>Wind Speed: <span id = "wind"></span></p>
+            <p>UV index: <span id = "uv"></span></p>
             
-        </div>
-    </div>
-    <div class="col-md-3">
-        <!-- history -->
-        <aside>
-          <div class="card" style="width: 18rem; text-align: center;">
-            <div class="card-body">
-              <h1 class="card-title">Location History</h1>
-              <p class="card-text">If you want to revist a location you viewed previously you can do that here!</p>
-            </div>
-            <ul class="list-group list-group-flush" id= btnContainer style="text-align: center;">
-           
-         
-            </ul>
-            <li class="list-group-item"><button id="clear" class = "btn-success btn-md">Clear</button></li>
-        </div>
-           
-        </aside>
-    </div>
+    
 
     </div>
+
+
+
+    <div class="container">
+        <div class="row" style = "margin-bottom:1%;">
+        <div class="col-md-15">
+          
+            <div class="jumbotron" style="text-align: center;">
+                <h1>Currently viewing: </h1>
+              <h2><span id ="location" ></span></h2>
+    
+        </div>
+
+
+
     <!-- next 5 days -->
     <div class="row" >
         <!-- day 0  -->
     <div class="col-md-4">
-        <div class="card"  style="width: 18rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
 
-            <ul class="list-group list-group-flush">
+            <ul class="card-body">
               <li class="list-group-item"><span id="date0"></span></li>
-              <li class="list-group-item" id = "day0"></li>
               <li class="list-group-item"><span id ="condition"></span></li>
-              <li class="list-group-item">Temperature:<span class="temperature"></span></li>
-              <li class="list-group-item">Humidity:<span class ="humidity"></span></li>
+              <li class="list-group-item">Temperature: <span class="temperature"></span></li>
             </ul>
         </div>
 
@@ -81,14 +84,12 @@
      <!-- day 1 -->
     <div class="col-md-4">
 
-        <div class="card"  style="width: 18rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
            
-            <ul class="list-group list-group-flush">
+            <ul class="card-body">
               <li class="list-group-item"><span id ="date1"></span></li>
-              <li class="list-group-item" id = "day1"></li>
               <li class="list-group-item"><span id ="condition1"></span></li>
-              <li class="list-group-item">Temperature:<span id ="temperature1"></span></li>
-              <li class="list-group-item">Humidity:<span id = "humidity1"></span></li>
+              <li class="list-group-item">Temperature: <span id ="temperature1"></span></li>
             </ul>
         </div>
 
@@ -97,14 +98,12 @@
     
     <div class="col-md-4">
 
-        <div class="card"  style="width: 18rem;">
+        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
            
-            <ul class="list-group list-group-flush">
+            <ul class="card-body">
               <li class="list-group-item"><span id = "date2"></span></li>
-              <li class="list-group-item" id = "day2"></li>
               <li class="list-group-item"><span id ="condition2"></span></li>
-              <li class="list-group-item">Temperature:<span id="temperature2"></span></li>
-              <li class="list-group-item">Humidity:<span id = "humidity2"></span></li>
+              <li class="list-group-item">Temperature: <span id="temperature2"></span></li>
             </ul>
         </div>
         </div>
@@ -113,15 +112,12 @@
     <div class="row" style="margin-top: 2%; ">
     <div class="col-md-4">
 
-        <div class="card"  style="width: 18rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
            
-            <ul class="list-group list-group-flush">
-            
+            <ul class="card-body">
               <li class="list-group-item"><span id ="date3"></span></li>
               <li class="list-group-item" id = "day3"></li>
-              <li class="list-group-item"><span id ="condition3"></span></li>
-              <li class="list-group-item">Temperature:<span id ="temperature3"></span></li>
-              <li class="list-group-item">Humidity:<span id ="humidity3"></span></li>
+              <li class="list-group-item">Temperature: <span id ="temperature3"></span></li>
             </ul>
         </div>
 
@@ -129,27 +125,23 @@
     <!-- day 4 -->
     <div class="col-md-4">
 
-    <div class="card"  style="width: 18rem; margin-bottom: 1%;">
-            
-            <ul class="list-group list-group-flush">
+    <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+
+            <ul class="card-body">
               <li class="list-group-item"><span id = "date4"></span></li>
-              <li class="list-group-item" id = "day4"></li>
               <li class="list-group-item"><span id ="condition4"></span></li>
-              <li class="list-group-item">Temperature:<span id = "temperature4"></span></li>
-              <li class="list-group-item">Humidity:<span id = "humidity4"></span></li>
+              <li class="list-group-item">Temperature: <span id = "temperature4"></span></li>
             </ul>
         </div>
     </div>
     <!-- day 5 -->
     <div class="col-md-4">
-        <div class="card"  style="width: 18rem;">
+        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
             
-            <ul class="list-group list-group-flush">
+            <ul class="card-body">
               <li class="list-group-item"><span id="date5"></span></li>
-              <li class="list-group-item" id = "day5"></li>
               <li class="list-group-item"><span id ="condition5"></span></li>
-              <li class="list-group-item">Temperature:<span id="temperature5"></span></li>
-              <li class="list-group-item">Humidity:<span id="humidity5"></span></li>
+              <li class="list-group-item">Temperature: <span id="temperature5"></span></li>
             </ul>
         </div>
 
@@ -159,20 +151,28 @@
     </div>
 
 
-    <!-- bootleg links -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <!-- ajax jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- ajax jquery -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</div>
+        </div>
 
+        <div class="col-md-4">
+            <!-- history -->
+            <aside>
+              <div class="card" style="width: 22rem; text-align: center;">
+                <div class="card-body">
+                  <h1 class="card-title">Location History</h1>
+                  <p class="card-text">If you want to revist a location you viewed previously you can do that here!</p>
+                </div>
+                <ul class="card-body" id= btnContainer style="text-align: center;">
+               
+             
+                </ul>
+                <li class="list-group-item"><button id="clear" class = "btn-success btn-md">Clear</button></li>
+            </div>
+               
+            </aside>
+        </div>
+ 
 
-    <!-- moment js link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    
-    <!-- my Js links -->
-    <script src="script.js"></script>
 
 </body>
 </html>
