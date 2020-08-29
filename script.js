@@ -1,5 +1,4 @@
 /// javascript file
-
 var historyButton = [];
 var latitude = "";
 var longitude = "";
@@ -88,7 +87,6 @@ $(document).ready(function () {
     if (cities == null) {
       return;
     }
-
 // "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
         //"x-rapidapi-key": "008509dc35mshc6146dbc6641739p1cd995jsncb83ec825d20"
         // may need these for the rapidapi ajax call I am using - but trying another way first. 
@@ -170,7 +168,6 @@ $(document).ready(function () {
     }
   }
 
-
   // this does not work :( - come back with tutor to fix
   function iconMake() {
     var forecast = [
@@ -191,7 +188,6 @@ $(document).ready(function () {
     ];
 
         // not sure what to do with the icons 
-
     for (var i = 0; i < fcondition.length; i++) {
       var rain = $(
         "<&#xf73d;>"
