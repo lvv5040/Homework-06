@@ -38,9 +38,12 @@ The following image demonstrates the application functionality:
 
 You are required to submit the following for review:
 
-* The URL of the deployed application.
+* https://lvv5040.github.io/Homework-06/
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+* https://github.com/lvv5040/Homework-06
 
+Screenshot of working page: 
+
+* https://github.com/lvv5040/Homework-06/issues/1#issue-688570958
 - - -
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.

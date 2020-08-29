@@ -23,7 +23,7 @@
    
 // using a nav bar to take add space to the top
 
-    <nav class="navbar" style ="margin-bottom: 1%;">
+    <nav class="navbar" style ="margin-bottom: 2%;">
     </nav>
 
     <div id="bg">
@@ -31,16 +31,16 @@
       </div>
 
     <div class="container">
-    <div class="row" style = "margin-bottom:1%;">
+    <div class="row" style = "margin-bottom:2%;">
     <div class="col-md-12">
       
         <div class="jumbotron" style="text-align: center;">
 
           <h1><span class ="day" ></span></h1>
-          <input id= "input">
+          <input id= "search">
 
            
-            <button class=" btn-success btn-md"  id = "submitBtn" role="button">Submit</button>
+            <button class=" btn-success btn-md"  id = "submitButton" role="button">Submit</button>
 
             <p class="lead">Use this weather app to find the weather for anywhere you would like to go or see what it is currently like</p>
             <p2>Simply enter the city or zip code of the location you desire to view</p2>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="container">
-        <div class="row" style = "margin-bottom:1%;">
+        <div class="row" style = "margin-bottom:2%;">
         <div class="col-md-15">
           
             <div class="jumbotron" style="text-align: center;">
@@ -63,7 +63,7 @@
 
     <div class="row" >
     <div class="col-md-4">
-        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 2%;">
 
             <ul class="card-body">
 
@@ -74,7 +74,7 @@
               
               <h4>Weather for: </h4>
               <li class="list-group-item"><span id="day0"></span></li>
-              <li class="list-group-item"><span id ="condition"></span></li>
+              <li class="list-group-item"><span id ="cond"></span></li>
               <li class="list-group-item">Temperature: <span class="temperature"></span></li>
             </ul>
         </div>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="col-md-4">
-        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 2%;">
            
             <ul class="card-body">
 
@@ -94,7 +94,7 @@
 
               <h4>Weather for: </h4>
               <li class="list-group-item"><span id ="day1"></span></li>
-              <li class="list-group-item"><span id ="condition1"></span></li>
+              <li class="list-group-item"><span id ="cond1"></span></li>
               <li class="list-group-item">Temperature: <span id ="temperature1"></span></li>
             </ul>
         </div>
@@ -103,7 +103,7 @@
 
     <div class="col-md-4">
 
-        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 2%;">
            
             <ul class="card-body">
 
@@ -115,7 +115,7 @@
 
               <h4>Weather for: </h4>
               <li class="list-group-item"><span id = "day2"></span></li>
-              <li class="list-group-item"><span id ="condition2"></span></li>
+              <li class="list-group-item"><span id ="cond2"></span></li>
               <li class="list-group-item">Temperature: <span id="temperature2"></span></li>
             </ul>
         </div>
@@ -124,7 +124,7 @@
     <div class="row" style="margin-top: 2%; ">
     <div class="col-md-4">
 
-        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 2%;">
            
             <ul class="card-body">
 
@@ -136,7 +136,7 @@
 
               <h4>Weather for: </h4>
               <li class="list-group-item"><span id ="day3"></span></li>
-              <li class="list-group-item" id = "condition3"></li>
+              <li class="list-group-item" id = "cond3"></li>
               <li class="list-group-item">Temperature: <span id ="temperature3"></span></li>
             </ul>
         </div>
@@ -144,7 +144,7 @@
     </div>
     <div class="col-md-4">
 
-    <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+    <div class="card"  style="width: 22rem; margin-bottom: 2%;">
 
             <ul class="card-body">
 
@@ -156,13 +156,13 @@
 
               <h4>Weather for: </h4>
               <li class="list-group-item"><span id = "day4"></span></li>
-              <li class="list-group-item"><span id ="condition4"></span></li>
+              <li class="list-group-item"><span id ="cond4"></span></li>
               <li class="list-group-item">Temperature: <span id = "temperature4"></span></li>
             </ul>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card"  style="width: 22rem; margin-bottom: 1%;">
+        <div class="card"  style="width: 22rem; margin-bottom: 2%;">
             
             <ul class="card-body">
 
@@ -173,7 +173,7 @@
 
               <h4>Weather for: </h4>
               <li class="list-group-item"><span id="day5"></span></li>
-              <li class="list-group-item"><span id ="condition5"></span></li>
+              <li class="list-group-item"><span id ="cond5"></span></li>
               <li class="list-group-item">Temperature: <span id="temperature5"></span></li>
             </ul>
         </div>
@@ -191,9 +191,9 @@
                   <h1 class="card-title">Location History</h1>
                   <p class="card-text">If you want to revist a location you viewed previously you can do that here!</p>
                 </div>
-                <ul class="card-body" id= btnContainer style="text-align: center;">
+                <ul class="card-body" id= buttonContainer style="text-align: center;">
                 </ul>
-                <li class="list-group-item"><button id="clear" class = "btn-success btn-md">Clear</button></li>
+                <li class="list-group-item"><button id="empty" class = "btn-success btn-md">Clear</button></li>
             </div>
             </aside>
         </div>
