@@ -187,7 +187,7 @@ $(document).ready(function () {
       $("#cond5").text(),
     ];
 
-        // not sure what to do with the icons 
+        // not sure what to do with the icons - will work with tutor
     for (var i = 0; i < fcondition.length; i++) {
       var rain = $(
         "<&#xf73d;>"
